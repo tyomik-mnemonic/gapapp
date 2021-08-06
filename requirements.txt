@@ -1,0 +1,10 @@
+flask
+gunicorn
+pandas
+numpy
+scikit-learn
+geopandas
+psycopg2
+shapely
+sqlalchemy
+geoalchemy2
