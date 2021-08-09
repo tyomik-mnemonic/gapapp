@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request, make_response
+from data_layer.db_loader import pgstorage
 
 app = Flask(__name__)
 
