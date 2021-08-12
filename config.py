@@ -13,5 +13,5 @@ class PGconfig:
 
 pgstorage = PGconfig(host='34.116.128.59',
                     user='gapuser', 
-                    psw='u3IGkErFJ1jkenO1',
+                    psw='',
                     db='vector_storage')
