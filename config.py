@@ -11,7 +11,7 @@ class PGconfig:
         self.engine = create_engine(f'postgresql://{user}:{psw}@{host}:{5432}/{db}')
 
 
-pgstorage = PGconfig(host='34.116.128.59',
+pgstorage = PGconfig(host='',
                     user='gapuser', 
                     psw='',
                     db='vector_storage')
