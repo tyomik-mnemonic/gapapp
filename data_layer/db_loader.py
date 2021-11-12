@@ -1,6 +1,7 @@
 import sqlalchemy
 from flask import request
 from config import pgstorage
+from abc import ABC
 
 pgstorage=pgstorage.engine
 
@@ -23,3 +24,25 @@ class RelDBConnector(metaclass=RelDBSingletone):
 
         result = self.engine.execute(f"""{req}""").fetchall()
         return result
+
+vector_storage = RelDBConnector(engine=pgstorage)
+
+class DbLoader(ABC):
+
+    def __init__(self, request:str=None):
+        self.request = request
+
+class VectorDbLoader(DbLoader):
+    def __init__(self):
+        self.connector = vector_storage
+        super().__init__()
+
+    def make_request(self):
+        self.connector.make_request(self.request)
+
+class VectorDbLoaderFabric(ABC):
+
+    @staticmethod
+    def loader():
+        return VectorDbLoader()
+
