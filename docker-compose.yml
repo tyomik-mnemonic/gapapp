@@ -1,0 +1,13 @@
+version: "1"
+
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    #command: bash pip install --upgrate pip
+    #command: bash pip install -r requirements
+    #command: bash ./run_service.sh
+
+    ports:
+      - 5050:5050
